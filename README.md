@@ -4,4 +4,11 @@ Her bir poz için, İdarece belirlenen oranlara uygun teklif birim fiyat tespit 
 
 Aşağıda örnek gösterimden daha kolay anlaşılacağını düşünüyorum.
 
+**Teklif Cetvelinin BOŞ Hali**
+![Bos](img/Puanlama_Bos.png)
 
+**Teklif Cetvelinin Hatalı Doldurulmuş Hali**
+![Hatali](img/Puanlama_Hatali.png)
+
+**Teklif Cetvelinin Dogru Doldurulmuş Hali**
+![Sonuc](img/Puanlama_Sonuc.png)
