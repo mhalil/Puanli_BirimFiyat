@@ -8,8 +8,8 @@ toplam_tutarlar = []            # Birim fiyat ile miktar çarpımından oluşan 
 alt_yuzde = [0.21, 0.09, 0.30, 0.23, 0.08] # min. yüzdelik dilim
 ust_yuzde = [0.25, 0.12, 0.33, 0.26, 0.10] # max. yüzdelik dilim
 
-min_tutar = []                  # İş kalemlerinin en düşük (MİN) toplam tutarlarını barındıran liste
-max_tutar = []                  # İş kalemlerinin en yüksek (MAX) toplam tutarlarını barındıran liste
+min_tutarlar = []                  # İş kalemlerinin en düşük (MİN) toplam tutarlarını barındıran liste
+max_tutarlar = []                  # İş kalemlerinin en yüksek (MAX) toplam tutarlarını barındıran liste
 
 def tutar():                    # Teklif Birim fiyatlar ile Miktarların çarpımını barındıran liste.
     toplam_tutarlar.clear()
@@ -17,16 +17,25 @@ def tutar():                    # Teklif Birim fiyatlar ile Miktarların çarpı
         toplam_tutarlar.append(bf[i] * mkt[i])
     return toplam_tutarlar
 
-tutar(bf, mkt)
+tutar()
 
-def genel_toplam ():                  # GENEL TOPLAMI ( Teklif Tutarı ) Hesaplayan fonksiyonu
+def genel_toplam ():            # GENEL TOPLAMI ( Teklif Tutarı ) Hesaplayan fonksiyonu
     return sum(toplam_tutarlar)
 
 genel_toplam()
 
-def min_tutar():             # İş kalemlerinin en düşük (MİN) toplam tutarlarını hesaplayan fonksiyon
-    pass
+def min_tutar():                # İş kalemlerinin en düşük (MİN) toplam tutarlarını hesaplayan fonksiyon
+    min_tutarlar.clear()
+    for i in range(len(alt_yuzde)):
+        min_tutarlar.append(alt_yuzde[i] * genel_toplam())
+    return min_tutarlar
 
+print("min. tutarlar:", min_tutar())
 
-def max_tutar():             # İş kalemlerinin en yüksek (MAX) toplam tutarlarını  hesaplayan fonksiyon
-    pass
+def max_tutar():                # İş kalemlerinin en yüksek (MAX) toplam tutarlarını  hesaplayan fonksiyon
+    max_tutarlar.clear()
+    for i in range(len(ust_yuzde)):
+        max_tutarlar.append(ust_yuzde[i] * genel_toplam())
+    return max_tutarlar
+
+print("max. tutarlar:", max_tutar())
