@@ -1,9 +1,6 @@
 # Birim Fiyat Teklif Usulü Yapılan İhalelerde, Puanlama Sistemine uygun birim fiyat belirlemeye dair kod çalışması. Her bir poz için, İdarece belirlenen oranlara uygun teklif birim fiyat tespit eden python uygulaması.
 
-from turtle import Turtle
-
-
-bf = [28, 5, 17, 40, 11]            # Birim fiyatlar. Bu değer değişecek 28, 5, 17, 40, 11 - 1, 1, 1, 1, 1
+bf = [1, 1, 1, 1, 1]        # Birim fiyatlar. Bu değer değişecek 28, 5, 17, 40, 11 - 1, 1, 1, 1, 1
 mkt = [174, 420, 384, 128, 174] # Miktarlar. Bu değer sabit kalacak
 
 toplam_tutarlar = []            # Birim fiyat ile miktar çarpımından oluşan TOPLAM TUTARLARI barıdıran liste
@@ -43,12 +40,26 @@ def max_tutar():                # İş kalemlerinin en yüksek (MAX) toplam tuta
 
 print("max_tutarlar:", max_tutar())
 
-def kontrol(tutar, min, max):
-    if (tutar >= min) and (tutar <= max):
-        print("İşlem Başarılı")
-        return True
-    
-    else:
-        print("hata")
+def kontrol():
+    for _ in range(100):
+        for i in range(len(bf)):
+            if (((bf[i] * mkt[i]) >= min_tutarlar[i]) and ((bf[i] * mkt[i]) <= max_tutarlar[i])):
+                print("işlem sonlandı", bf)
+                break
 
-kontrol(toplam_tutarlar, min_tutarlar, max_tutarlar)
+            elif ((bf[i] * mkt[i]) < min_tutarlar[i]):
+                bf[i] += 1
+                print("değer artırılıyor", bf[i])
+            
+            elif ((bf[i] * mkt[i]) > max_tutarlar[i]):
+                bf[i] -= 1
+                print("değer azaltılıyor", bf[i])
+
+def basla():
+    tutar()
+    genel_toplam()
+    min_tutar()
+    max_tutar()
+    kontrol()
+
+basla()
