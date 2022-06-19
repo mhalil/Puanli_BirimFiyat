@@ -40,26 +40,26 @@ def max_tutar():                # İş kalemlerinin en yüksek (MAX) toplam tuta
 
 print("max_tutarlar:", max_tutar())
 
-def kontrol():
-    for _ in range(100):
-        for i in range(len(bf)):
-            if (((bf[i] * mkt[i]) >= min_tutarlar[i]) and ((bf[i] * mkt[i]) <= max_tutarlar[i])):
-                print("işlem sonlandı", bf)
-                break
+# def kontrol():
+#     for _ in range(100):
+#         for i in range(len(bf)):
+#             if (((bf[i] * mkt[i]) >= min_tutarlar[i]) and ((bf[i] * mkt[i]) <= max_tutarlar[i])):
+#                 print("işlem sonlandı", bf)
+#                 break
 
-            elif ((bf[i] * mkt[i]) < min_tutarlar[i]):
-                bf[i] += 1
-                print("değer artırılıyor", bf[i])
+#             elif ((bf[i] * mkt[i]) < min_tutarlar[i]):
+#                 bf[i] += 1
+#                 print("değer artırılıyor", bf[i])
             
-            elif ((bf[i] * mkt[i]) > max_tutarlar[i]):
-                bf[i] -= 1
-                print("değer azaltılıyor", bf[i])
+#             elif ((bf[i] * mkt[i]) > max_tutarlar[i]):
+#                 bf[i] -= 1
+#                 print("değer azaltılıyor", bf[i])
 
-def basla():
-    tutar()
-    genel_toplam()
-    min_tutar()
-    max_tutar()
-    kontrol()
+# def basla():
+#     tutar()
+#     genel_toplam()
+#     min_tutar()
+#     max_tutar()
+#     kontrol()
 
 # basla()
