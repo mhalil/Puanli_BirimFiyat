@@ -23,4 +23,4 @@ for i in range(len(miktarlar)):
 for index, bf in enumerate(birim_fiyatlar):
     print(f"{index+1}. Poza ait min. ve max. fiyat aralığı: {birim_fiyatlar[index]}")
 
-print("Min. Birim Fiyatlara Göre Toplam Teklif Tutarı:", toplam_min,"\nMax. Birim Fiyatlara Göre Toplam Teklif Tutarı:", toplam_max)
+print(f"Min. Birim Fiyatlara Göre Toplam Teklif Tutarı: {round(toplam_min,2)} TL\nMax. Birim Fiyatlara Göre Toplam Teklif Tutarı: {round(toplam_max,2)} TL")
