@@ -62,4 +62,4 @@ def basla():
     max_tutar()
     kontrol()
 
-basla()
+# basla()
