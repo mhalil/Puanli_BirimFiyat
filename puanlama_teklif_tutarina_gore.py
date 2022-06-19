@@ -13,4 +13,14 @@ for i in range(len(miktarlar)):
     ust = round(teklif_tutari * ust_yuzde[i] / miktarlar[i],2)
     birim_fiyatlar.append([alt, ust])
 
-print(birim_fiyatlar)
+toplam_min = 0
+toplam_max = 0
+
+for i in range(len(miktarlar)):
+    toplam_min += birim_fiyatlar[i][0] * miktarlar[i]
+    toplam_max += birim_fiyatlar[i][1] * miktarlar[i]
+
+for index, bf in enumerate(birim_fiyatlar):
+    print(f"{index+1}. Poza ait min. ve max. fiyat aralığı: {birim_fiyatlar[index]}")
+
+print("Min. Birim Fiyatlara Göre Toplam Teklif Tutarı:", toplam_min,"\nMax. Birim Fiyatlara Göre Toplam Teklif Tutarı:", toplam_max)
